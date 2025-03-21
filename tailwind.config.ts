@@ -1,3 +1,4 @@
+
 import type { Config } from "tailwindcss";
 
 export default {
@@ -84,11 +85,41 @@ export default {
 					to: {
 						height: '0'
 					}
+				},
+				fadeIn: {
+					'0%': { opacity: '0' },
+					'100%': { opacity: '1' }
+				},
+				fadeInUp: {
+					'0%': { opacity: '0', transform: 'translateY(20px)' },
+					'100%': { opacity: '1', transform: 'translateY(0)' }
+				},
+				slideInFromLeft: {
+					'0%': { transform: 'translateX(-100%)', opacity: '0' },
+					'100%': { transform: 'translateX(0)', opacity: '1' }
+				},
+				slideInFromRight: {
+					'0%': { transform: 'translateX(100%)', opacity: '0' },
+					'100%': { transform: 'translateX(0)', opacity: '1' }
+				},
+				float: {
+					'0%, 100%': { transform: 'translateY(0)' },
+					'50%': { transform: 'translateY(-10px)' }
+				},
+				pulse: {
+					'0%, 100%': { opacity: '1' },
+					'50%': { opacity: '0.5' }
 				}
 			},
 			animation: {
 				'accordion-down': 'accordion-down 0.2s ease-out',
-				'accordion-up': 'accordion-up 0.2s ease-out'
+				'accordion-up': 'accordion-up 0.2s ease-out',
+				'fade-in': 'fadeIn 0.6s ease-out',
+				'fade-in-up': 'fadeInUp 0.6s ease-out',
+				'slide-in-from-left': 'slideInFromLeft 0.6s ease-out',
+				'slide-in-from-right': 'slideInFromRight 0.6s ease-out',
+				'float': 'float 3s ease-in-out infinite',
+				'pulse': 'pulse 2s ease-in-out infinite'
 			}
 		}
 	},
