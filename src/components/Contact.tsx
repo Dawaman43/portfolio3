@@ -1,4 +1,3 @@
-
 import { useState } from 'react';
 import { motion } from 'framer-motion';
 import { Button } from '@/components/ui/button';
@@ -65,8 +64,8 @@ const Contact = () => {
               </div>
               <div>
                 <h3 className="text-lg font-medium">Email</h3>
-                <a href="mailto:contact@dawitworku.com" className="text-muted-foreground hover:text-foreground transition-colors">
-                  contact@dawitworku.com
+                <a href="mailto:dawitworkujima@gmail.com" className="text-muted-foreground hover:text-foreground transition-colors">
+                  dawitworkujima@gmail.com
                 </a>
               </div>
             </div>
