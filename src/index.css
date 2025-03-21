@@ -20,7 +20,8 @@
     --popover: 0 0% 100%;
     --popover-foreground: 240 10% 3.9%;
 
-    --primary: 240 5.9% 10%;
+    --primary: 252 56% 55%;
+    --primary-rgb: 111, 76, 255;
     --primary-foreground: 0 0% 98%;
 
     --secondary: 240 4.8% 95.9%;
@@ -52,7 +53,8 @@
     --popover: 240 10% 3.9%;
     --popover-foreground: 0 0% 98%;
 
-    --primary: 0 0% 98%;
+    --primary: 252 56% 55%;
+    --primary-rgb: 111, 76, 255;
     --primary-foreground: 240 5.9% 10%;
 
     --secondary: 240 3.7% 15.9%;
@@ -99,11 +101,11 @@
   }
   
   ::-webkit-scrollbar-thumb {
-    @apply bg-muted-foreground/30 rounded-full;
+    @apply bg-primary/30 rounded-full;
   }
   
   ::-webkit-scrollbar-thumb:hover {
-    @apply bg-muted-foreground/50;
+    @apply bg-primary/50;
   }
 }
 
@@ -121,7 +123,7 @@
   }
   
   .btn-primary {
-    @apply inline-flex items-center justify-center rounded-md text-sm font-medium transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:opacity-50 disabled:pointer-events-none bg-primary text-primary-foreground hover:bg-primary/90 h-10 py-2 px-4;
+    @apply inline-flex items-center justify-center rounded-md text-sm font-medium transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:opacity-50 disabled:pointer-events-none bg-primary text-primary-foreground hover:bg-primary/90 h-10 py-2 px-4 shadow-md hover:shadow-lg hover:shadow-primary/20;
   }
   
   .btn-outline {
@@ -129,15 +131,15 @@
   }
   
   .section-heading {
-    @apply text-3xl md:text-4xl font-bold mb-8 tracking-tight;
+    @apply text-3xl md:text-4xl font-bold mb-8 tracking-tight bg-clip-text text-transparent bg-gradient-to-r from-foreground to-primary;
   }
   
   .backdrop-blur-card {
-    @apply border border-border/40 bg-background/30 backdrop-blur-md rounded-lg shadow-sm;
+    @apply border border-border/40 bg-background/30 backdrop-blur-md rounded-lg shadow-sm hover:shadow-glow transition-all duration-300;
   }
   
   .card-hover {
-    @apply transition-all duration-300 hover:shadow-md hover:-translate-y-1;
+    @apply transition-all duration-300 hover:shadow-md hover:-translate-y-1 hover:shadow-primary/10;
   }
   
   .link-underline {
@@ -146,6 +148,14 @@
   
   .animated-gradient {
     @apply bg-gradient-to-r from-primary/70 via-foreground/50 to-primary/70 bg-[length:200%_100%] animate-gradient;
+  }
+  
+  .glow-effect {
+    @apply shadow-glow hover:shadow-glow-lg transition-all duration-300;
+  }
+  
+  .gradient-text {
+    @apply bg-clip-text text-transparent bg-gradient-to-r from-foreground to-primary;
   }
 }
 
@@ -168,5 +178,9 @@
   
   .text-balance {
     text-wrap: balance;
+  }
+  
+  .text-glow {
+    text-shadow: 0 0 5px rgba(var(--primary-rgb), 0.3), 0 0 10px rgba(var(--primary-rgb), 0.2);
   }
 }

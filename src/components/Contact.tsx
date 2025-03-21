@@ -1,3 +1,4 @@
+
 import { useState } from 'react';
 import { motion } from 'framer-motion';
 import { Button } from '@/components/ui/button';
@@ -76,8 +77,8 @@ const Contact = () => {
               </div>
               <div>
                 <h3 className="text-lg font-medium">Phone</h3>
-                <a href="tel:+251912345678" className="text-muted-foreground hover:text-foreground transition-colors">
-                  +251 912 345 678
+                <a href="tel:+251949377543" className="text-muted-foreground hover:text-foreground transition-colors">
+                  +251 949 377 543
                 </a>
               </div>
             </div>

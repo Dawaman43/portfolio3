@@ -64,6 +64,10 @@ export default {
 					ring: 'hsl(var(--sidebar-ring))'
 				}
 			},
+			boxShadow: {
+				glow: '0 0 20px rgba(var(--primary-rgb) / 0.15), 0 0 40px rgba(var(--primary-rgb) / 0.1)',
+				'glow-lg': '0 0 30px rgba(var(--primary-rgb) / 0.25), 0 0 80px rgba(var(--primary-rgb) / 0.15)',
+			},
 			borderRadius: {
 				lg: 'var(--radius)',
 				md: 'calc(var(--radius) - 2px)',
@@ -121,6 +125,20 @@ export default {
 				shimmer: {
 					'0%': { backgroundPosition: '-200% 0' },
 					'100%': { backgroundPosition: '200% 0' }
+				},
+				glow: {
+					'0%': { boxShadow: '0 0 5px rgba(var(--primary-rgb), 0.2)' },
+					'50%': { boxShadow: '0 0 20px rgba(var(--primary-rgb), 0.4)' },
+					'100%': { boxShadow: '0 0 5px rgba(var(--primary-rgb), 0.2)' }
+				},
+				typing: {
+					'0%': { width: '0' },
+					'50%': { width: '100%' },
+					'100%': { width: '0' }
+				},
+				blink: {
+					'0%, 100%': { borderColor: 'transparent' },
+					'50%': { borderColor: 'hsl(var(--primary))' }
 				}
 			},
 			animation: {
@@ -134,7 +152,10 @@ export default {
 				'pulse': 'pulse 2s ease-in-out infinite',
 				'spin': 'spin 2s linear infinite',
 				'bounce': 'bounce 2s ease-in-out infinite',
-				'shimmer': 'shimmer 2s linear infinite'
+				'shimmer': 'shimmer 2s linear infinite',
+				'glow': 'glow 3s ease-in-out infinite',
+				'typing': 'typing 3.5s steps(30, end) infinite',
+				'blink': 'blink 0.7s infinite'
 			}
 		}
 	},
