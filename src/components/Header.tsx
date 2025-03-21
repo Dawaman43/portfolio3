@@ -14,7 +14,7 @@ const Header = () => {
       setIsScrolled(window.scrollY > 50);
       
       // Determine active section based on scroll position
-      const sections = ['home', 'about', 'projects', 'contact'];
+      const sections = ['home', 'about', 'skills', 'projects', 'contact'];
       for (const section of sections.reverse()) {
         const element = document.getElementById(section);
         if (element && window.scrollY >= element.offsetTop - 100) {
@@ -50,7 +50,7 @@ const Header = () => {
         
         {/* Desktop Navigation */}
         <nav className="hidden md:flex space-x-8">
-          {['home', 'about', 'projects', 'contact'].map((item) => (
+          {['home', 'about', 'skills', 'projects', 'contact'].map((item) => (
             <button
               key={item}
               onClick={() => scrollToSection(item)}
@@ -79,7 +79,7 @@ const Header = () => {
       {mobileMenuOpen && (
         <nav className="md:hidden absolute top-full left-0 right-0 bg-background/95 backdrop-blur-md border-b border-border/40 shadow-md animate-fade-in-up">
           <div className="flex flex-col p-4 space-y-4">
-            {['home', 'about', 'projects', 'contact'].map((item) => (
+            {['home', 'about', 'skills', 'projects', 'contact'].map((item) => (
               <button
                 key={item}
                 onClick={() => scrollToSection(item)}

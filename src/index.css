@@ -86,6 +86,7 @@
   body {
     @apply bg-background text-foreground;
     font-feature-settings: "rlig" 1, "calt" 1;
+    transition: background-color 0.3s ease, color 0.3s ease;
   }
   
   ::-webkit-scrollbar {
@@ -141,5 +142,31 @@
   
   .link-underline {
     @apply relative after:absolute after:bottom-0 after:left-0 after:bg-primary after:h-[1px] after:w-0 hover:after:w-full after:transition-all after:duration-300;
+  }
+  
+  .animated-gradient {
+    @apply bg-gradient-to-r from-primary/70 via-foreground/50 to-primary/70 bg-[length:200%_100%] animate-gradient;
+  }
+}
+
+@keyframes gradientMove {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+@layer utilities {
+  .animate-gradient {
+    animation: gradientMove 8s ease infinite;
+  }
+  
+  .text-balance {
+    text-wrap: balance;
   }
 }
